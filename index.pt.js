@@ -30,7 +30,7 @@ while(result = pattern.exec(target)){
     console.log(result)
 }
 
-//Telidarst = va texto (Invés de Pegar)
+//test = validar texto (Invés de Pegar)
 let regex5 = /\w/;
 let alvo = 'a';
 regex5.test(alvo) // True ou False
@@ -94,3 +94,23 @@ data.replace(/\//g,'-');
 //GULOSO VS NÃO GULOSO
 // .+ -> Pega Todas as Ocorrências
 // .+? -> Pega Só a Primeira Ocorrência
+
+
+// \B e \b -> Se tem algo ou não na frente/atrás
+//Exemplos:
+
+//COM \b
+
+/\bs/.exec(); // Pega todos os S sem nada atras
+
+/s\b/.exec(); // Pega todos os S sem na frente
+
+/\bs\b/.exec(); // Sem nada na frente e atrás de S -> pega o S 'isolado'
+
+//COM \B
+
+/\Bs/g.exec(); // Pega todos os S com algo atras
+
+/s\B/.exec(); // Pega todos os S com algo na frente
+
+/\Bs\B/.exec(); // Pega o S com algo na frente e atrás -> pega o S 'cercado'
